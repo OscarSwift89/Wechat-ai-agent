@@ -1,0 +1,53 @@
+# 小红书自动运营系统配置文件
+
+# 账号配置（扫码登录）
+accounts:
+  - name: "账号1"
+    cookie_file: "cookies/account1_cookies.json"
+  - name: "账号2"
+    cookie_file: "cookies/account2_cookies.json"
+
+# OpenAI API配置
+openai:
+  api_key: "your_openai_api_key"
+  model: "gpt-3.5-turbo"
+  max_tokens: 150
+  temperature: 0.7
+
+# 浏览器配置
+browser:
+  headless: false  # 设置为true可无头模式运行
+  slow_mo: 1000    # 操作间隔时间(毫秒)
+  timeout: 30000   # 页面加载超时时间
+
+# 操作延迟配置(毫秒)
+delays:
+  page_load: 3000      # 页面加载后等待时间
+  element_click: 1000   # 点击元素后等待时间
+  text_input: 500      # 文本输入间隔时间
+  upload_file: 2000    # 文件上传后等待时间
+  comment_reply: 2000  # 评论回复后等待时间
+
+# 文件路径配置
+paths:
+  drafts: "drafts/"           # 文案目录
+  assets: "assets/"           # 图片目录
+  cookies: "cookies/"         # Cookie存储目录
+  logs: "logs/"              # 日志目录
+
+# 发帖配置
+publishing:
+  max_posts_per_day: 5       # 每日最大发帖数
+  min_interval_hours: 2      # 发帖最小间隔(小时)
+  auto_save_draft: true      # 是否自动保存草稿
+
+# 评论配置
+commenting:
+  max_comments_per_day: 20   # 每日最大评论数
+  min_interval_minutes: 30   # 评论最小间隔(分钟)
+  target_notes: []           # 目标笔记链接列表
+  comment_templates:         # 评论模板
+    - "很棒的分享！学到了很多"
+    - "这个建议很实用，谢谢分享"
+    - "内容很有价值，收藏了"
+    - "写得很好，继续加油" 
